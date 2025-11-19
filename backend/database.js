@@ -97,8 +97,8 @@ const readStudents = async () => {
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql)
-            .then((students) => {
-                resolve(students);
+            .then((Students) => {
+                resolve(Students);
             })
             .catch((error) => {
                 reject(error);
@@ -125,8 +125,8 @@ const addStudent = async (id, name, age, religion) => {
     return new Promise((resolve, reject) => {
         knex_db
             .raw(sql, [id, name, age, religion])
-            .then(() => {
-                resolve({status: "Successfully inserted Teacher"});
+            .then((data) => {
+                resolve({status: "Successfully inserted Student"});
             })
             .catch((error) => {
                 reject(error);
